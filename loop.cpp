@@ -23,3 +23,23 @@ Node* flyodloop(Node *head){
     }
     return nullptr;
 }
+
+Node* getStartingNode(Node* head){
+    if(head==nullptr){
+        return nullptr;
+    }
+
+    Node* start=flyodloop(head);
+
+    if(start==nullptr){
+        return nullptr;
+    }
+
+    Node* iter=head;
+    while(iter!=start){
+        iter=iter->next;
+        start=start->next;
+    }
+
+    return iter;
+}

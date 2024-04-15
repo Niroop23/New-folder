@@ -1,5 +1,6 @@
 #include<iostream>
 #include "sorrttt.cpp"
+#include "loop.cpp"
 using namespace std;
 
 Node* head;
@@ -174,6 +175,12 @@ int main()
     cout<<"unique sored list :";
     head=uniquesorted(head);
     print(head);
+
+
+    cout<<"starting node is:";
+    head= getStartingNode(head);
+    cout<<head;
+
 
     while(head!=NULL){
         Node* temp=head;
