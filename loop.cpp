@@ -43,3 +43,24 @@ Node* getStartingNode(Node* head){
 
     return iter;
 }
+
+Node* remove_loop(Node* head){
+    if(head==nullptr){
+        return nullptr;
+    
+    }
+
+    Node* start=getStartingNode(head);
+
+    if(start==nullptr){
+        return head;
+    }
+
+    Node* temp=start;
+    while(temp->next!=start){
+        temp=temp->next;
+    }
+    temp->next=nullptr;
+
+    return head;
+}

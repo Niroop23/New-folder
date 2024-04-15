@@ -182,6 +182,11 @@ int main()
     cout<<head;
 
 
+    cout<<"after removing loop :";
+    head=remove_loop(head);
+    print(head);
+
+
     while(head!=NULL){
         Node* temp=head;
         head=head->next;
