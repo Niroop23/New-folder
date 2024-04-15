@@ -8,3 +8,4 @@ struct Node{
 
 Node* uniquesorted(Node* head);
 Node* sortt(Node* head);
+Node* flyodloop(Node *head);
