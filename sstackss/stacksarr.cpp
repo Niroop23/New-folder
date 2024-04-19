@@ -8,6 +8,23 @@ int top=-1;
 
 void push(int x){
     if(top==max-1){
+
+        int ch;
+        cout<<"(1)bigger array?? or (2)leave";
+        cin>> ch;
+        switch(ch){
+            
+            case 1:
+                int BA[2*max];
+                for(int i=0;i<sizeof(A);i++){
+                    BA[i]=A[i];
+
+                }
+                BA[++top]=x;
+                
+                
+
+        }
         cout<<"sstack overflow\n"<<endl;
         return;
     }
@@ -20,6 +37,7 @@ void pop(){
         cout<<"underflow\n"<<endl;
         return;
     }
+
     top--;
 }
 
