@@ -4,7 +4,7 @@ using namespace std;
 
 class twostack
 {
-    private:
+    
     int *arr;
     int size;
     int top1,top2;
@@ -12,31 +12,14 @@ class twostack
 
 
     public:
-        twostack()
+        twostack(int n)
         {
-            size=0;
-            arr=nullptr;
+            this->size=n;
+            arr=new int[n];
             top1=-1;
-            top2=0;
+            top2=n;
         }
 
-        ~twostack(){
-            if(arr!=nullptr){
-                delete[] arr;
-            }
-        }
-        void initialize(int n)
-        {
-            if(n<=0)
-            {
-                cout<<"size invalid... \n"<<endl;
-                return;
-            }
-
-            size=n;
-            arr=new int[size];
-            top2=size;
-        }
 
         void push1(int x)
         {
@@ -85,7 +68,7 @@ class twostack
             {
                 int pop2=arr[top2];
                 cout<<"popped element from stack2 : "<<pop2<<"\n";
-                top2--;
+                top2++;
             }
         }
 
@@ -102,7 +85,7 @@ class twostack
                 int i;
                 for(i=top1;i>=0;--i)
                 {
-                    cout<<arr[top1];
+                    cout<<arr[i]<<" ";
                 }
                 cout<<"\n";
             }
@@ -120,7 +103,7 @@ class twostack
                 int i;
                 for (i=top2;i<size;++i)
                 {
-                    cout<<arr[top2];
+                    cout<<arr[i]<<" ";
                     
                 }
                 cout<<"\n";
@@ -134,12 +117,12 @@ class twostack
 int main()
 {
     int n=20;
-    twostack s;
-    s.initialize(n);
+    twostack s(n);
+    
 
     for(int i=0;i<n/2;++i){
         int data;
-        cout<<"enter data";
+        cout<<"enter data: \n";
         cin>>data;
 
         s.push1(data);
@@ -148,11 +131,33 @@ int main()
 
     for(int i=n-1;i>=n/2;--i){
         int data;
-        cout<<"enter data: ";
+        cout<<"enter data: \n";
         cin>>data;
         s.push2(data);
         cout<<"pushed data into stack 2 is :"<<data;
     }
+   /* s.push1(1);
+    s.push1(2);
+    s.push1(3);
+    s.push1(4);
+    s.push1(5);
+    s.push1(6);
+    s.push1(7);
+    s.push1(8);
+    s.push1(9);
+    s.push1(10);
+    s.push2(11);
+    s.push2(12);
+    s.push2(13);
+    s.push2(14);
+    s.push2(15);
+    s.push2(16);
+    s.push2(17);
+    s.push2(18);
+    s.push2(19);
+    s.push2(20);*/
+
+
     s.display1();  
     s.display2(); 
 
