@@ -133,9 +133,7 @@ class twostack
 
 int main()
 {
-    int n;
-    cout<<"enter size of array:";
-    cin>>n;
+    int n=20;
     twostack s;
     s.initialize(n);
 
