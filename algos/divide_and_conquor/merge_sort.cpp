@@ -80,9 +80,11 @@ void print(int a[], int size)
 int main()
 {
     int arr[]={12,11,13,5,6,7};
+    
     int arr_size=sizeof(arr)/sizeof(arr[0]);
 
     cout<<"given array is : \n";
+
     print(arr,arr_size);
 
     mergesort(arr,0,arr_size-1);
